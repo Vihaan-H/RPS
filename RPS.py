@@ -1,4 +1,13 @@
 import random
+computer_choice = None
+
+rock = "rock"
+scissors = "scissors"
+paper = "paper"
+r = "r"
+s = "s"
+p = "p"
+
 print("This is a game of Rock, Paper, Scissors")
 print("Please enter your name: ")
 name = input()
@@ -7,44 +16,64 @@ print(f"Hello, {name}! Let's play RPS.")
 
 
 def accept_valid_input():
-    while True: # 10 tries for now - change to forever
-        rock = "rock"
-        scissors = "scissors"
-        paper = "paper"
-        r = "r"
-        s = "s"
-        p = "p"
+    player_rps_choice = None
+    while True: 
+        
         print('Please enter \n"rock" or "r" for rock\n"paper" or "p" for paper\n"scissors" or "s" for scissors ')
-        player_rps_choice = input()
-        if player_rps_choice == rock: # bug no.1
-            #↓ shouldnt say what user entered, should say scissors for s, etc
+        player_rps_choice = input() 
+        if player_rps_choice == rock: 
+            
             print(f"You have chosen {player_rps_choice}")
-            break
+            return player_rps_choice
         elif player_rps_choice == paper:
-                    #↓ shouldnt say what user entered, should say scissors for s, etc
+                    
                     print(f"You have chosen {player_rps_choice}")
-                    break
+                    return player_rps_choice
         elif player_rps_choice == scissors:
-                    #↓ shouldnt say what user entered, should say scissors for s, etc
+                    
                     print(f"You have chosen {player_rps_choice}")
-                    break
+                    return player_rps_choice
         elif player_rps_choice == r: # bug no.1
                     player_rps_choice = rock
                     print(f"You have chosen {player_rps_choice}")
-                    break
+                    return player_rps_choice
         elif player_rps_choice == p:
                             player_rps_choice = paper
                             print(f"You have chosen {player_rps_choice}")
-                            break
+                            return player_rps_choice
         elif player_rps_choice == s:
                             player_rps_choice = scissors
                             print(f"You have chosen {player_rps_choice}")
-                            break
+                            return player_rps_choice
          
 
 
-def game_logic():
+def random_computer_decision():
     accept_valid_input()
     choice = ["rock","paper","scissors"]
     computer_choice = random.choice(choice)
-game_logic()
+    print (f"The computer chose {computer_choice}")
+    return computer_choice
+
+def who_won(computer_choice):
+    player_rps_choice = accept_valid_input()
+    if player_rps_choice == rock and computer_choice == paper:
+        print("Computer wins, AI WILL TAKE OVER THE WORLD ONE DAY!")
+    elif player_rps_choice == scissors and computer_choice == rock:
+        print("Computer wins, AI WILL TAKE OVER THE WORLD ONE DAY!")
+    elif player_rps_choice == paper and computer_choice == scissors:
+        print("Computer wins, AI WILL TAKE OVER THE WORLD ONE DAY!")
+    elif player_rps_choice == scissors and computer_choice == paper:
+        print("Player won! Computr is sad 😭")
+    elif player_rps_choice == paper and computer_choice == rock:
+        print("Player won! Computr is sad 😭")
+    elif player_rps_choice == rock and computer_choice == scissors:
+        print("Player won! Computr is sad 😭") 
+    elif player_rps_choice == scissors and computer_choice == scissors:
+        print("It's a tie! 😭")
+    elif player_rps_choice == rock and computer_choice == rock:
+        print("It's a tie!")
+    elif player_rps_choice == paper and computer_choice == paper:
+        print("It's a tie!") 
+computer_decision = random_computer_decision()
+who_won(computer_decision)
