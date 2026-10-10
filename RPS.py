@@ -62,13 +62,13 @@ def who_won(computer_choice):
     elif player_rps_choice == paper and computer_choice == scissors:
         print("Computer wins, AI WILL TAKE OVER THE WORLD ONE DAY!")
     elif player_rps_choice == scissors and computer_choice == paper:
-        print("Player won! Computr is sad 😭")
+        print(f"{name} won! Computer is sad 😭")
     elif player_rps_choice == paper and computer_choice == rock:
-        print("Player won! Computr is sad 😭")
+        print(f"{name} won! Computer is sad 😭")
     elif player_rps_choice == rock and computer_choice == scissors:
-        print("Player won! Computr is sad 😭") 
+        print(f"{name} won! Computer is sad 😭") 
     elif player_rps_choice == scissors and computer_choice == scissors:
-        print("It's a tie! 😭")
+        print("It's a tie!")
     elif player_rps_choice == rock and computer_choice == rock:
         print("It's a tie!")
     elif player_rps_choice == paper and computer_choice == paper:
