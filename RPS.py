@@ -53,9 +53,8 @@ def random_computer_decision():
     computer_choice = random.choice(choice)
     print (f"The computer chose {computer_choice}")
     return computer_choice
-
+player_rps_choice = accept_valid_input()
 def who_won(computer_choice):
-    player_rps_choice = accept_valid_input()
     if player_rps_choice == rock and computer_choice == paper:
         print("Computer wins, AI WILL TAKE OVER THE WORLD ONE DAY!")
     elif player_rps_choice == scissors and computer_choice == rock:
