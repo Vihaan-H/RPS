@@ -7,7 +7,8 @@ def accept_valid_input():
         
         print('Please enter \n"rock" or "r" for rock\n"paper" or "p" for paper\n"scissors" or "s" for scissors ')
         player_rps_choice_unstripped = input() 
-        player_rps_choice = player_rps_choice_unstripped.strip()
+        player_rps_choice_uncapped = player_rps_choice_unstripped.strip()
+        player_rps_choice = player_rps_choice_uncapped.lower()
         if player_rps_choice == rock: 
             
             print(f"You have chosen {player_rps_choice}")
@@ -60,10 +61,12 @@ def accept_player_name():
     while True:
         print("Please enter your name: ")
         name_unstripped = input()
-        name = name_unstripped.strip()
+        name_uncapped = name_unstripped.strip()
+        name = name_uncapped.capitalize()
         if name == "" or name == None:
             print("Please enter your name: ")
-            name = input()
+            name_uncapped = input()
+            name = name_uncapped.capitalize()
         else:
             break
     return name
