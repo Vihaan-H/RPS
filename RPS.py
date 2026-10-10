@@ -49,7 +49,6 @@ def accept_valid_input():
 
 
 def random_computer_decision():
-    accept_valid_input()
     choice = ["rock","paper","scissors"]
     computer_choice = random.choice(choice)
     print (f"The computer chose {computer_choice}")
