@@ -59,11 +59,12 @@ def who_won(computer_choice):
         print("It's a tie!")
 def accept_player_name():
     while True:
-        print("Please enter your name: ")
-        name = input().strip().capitalize()
-        if name == "" or name == None:
-            print("Please enter your name: ")
-            name = input().strip().capitalize()
+        print("Please enter your first name: ")
+        name = input().strip().title()
+        if name == "" or '' or name == None:
+            print("Please enter your first name: ")
+            name = input().strip().title()
+            # can't break here or it'll accept blank inputs
         else:
             break
     return name
