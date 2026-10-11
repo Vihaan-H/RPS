@@ -1,5 +1,12 @@
 import random
 
+rock = "rock"
+scissors = "scissors"
+paper = "paper"
+r = "r"
+s = "s"
+p = "p"
+
 def accept_valid_input():
     player_rps_choice = None
     while True: 
@@ -66,20 +73,27 @@ def accept_player_name():
             print("Oops. Your name cannot be blank. ")
         else:
             return name
-    
-computer_choice = None
-rock = "rock"
-scissors = "scissors"
-paper = "paper"
-r = "r"
-s = "s"
-p = "p"
-#calling section ↓
+            
 print("This is a game of Rock, Paper, Scissors")
 name = accept_player_name()
 #should be greeting based on time ↓
 print(f"Hello, {name}! Let's play RPS.")
-player_rps_choice = accept_valid_input() 
-computer_decision = random_computer_decision()
-winner = who_won(player_rps_choice,computer_decision)
-print(winner)
+while True:    
+    computer_choice = None
+    player_rps_choice = None
+    #calling section ↓
+    player_rps_choice = accept_valid_input() 
+    computer_decision = random_computer_decision()
+    winner = who_won(player_rps_choice,computer_decision)
+    print(winner)
+    print("Would you like to play again? (y/n)")
+    play_again = input()
+    if play_again == "n":
+        print("Now computer is sad because he doesnt have a friend to play RPS with")
+        break
+    elif play_again == "y":
+        print("i think i will win. Let's find out!")
+        continue
+    else:
+        print("Invalid input. You aren't educated enough to play RPS with me! :-P")
+        break
