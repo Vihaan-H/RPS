@@ -60,9 +60,7 @@ def who_won(computer_choice):
 def accept_player_name():
     while True:
         print("Please enter your name: ")
-        name_unstripped = input()
-        name_uncapped = name_unstripped.strip()
-        name = name_uncapped.capitalize()
+        name = input().strip().capitalize()
         if name == "" or name == None:
             print("Please enter your name: ")
             name_uncapped = input()
@@ -77,7 +75,6 @@ paper = "paper"
 r = "r"
 s = "s"
 p = "p"
-
 #calling section ↓
 print("This is a game of Rock, Paper, Scissors")
 name = accept_player_name()
